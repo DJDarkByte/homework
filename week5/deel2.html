@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <style>
+            body > div {
+                background: orange;
+                padding: 6px 9px;
+                width: 200px;
+                color: #fff;
+                font-family: sans-serif;
+                margin: 0 0 12px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Weather forecast</h1>
+        
+        <div id="block">
+            <div>In <span id="numDays">1</span> day(s): <span id="weather">sunny</span></div>
+            <div>Temperature: <span id="temp">22</span>&deg;C</div>
+            <div>Rain: <span id="rain">0</span>mm</div>
+        </div>
+        
+        <button id="prevDay">previous day</button>
+        <button id="nextDay">next day</button>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="js/deel2.js"></script>
+    </body>
+</html>
