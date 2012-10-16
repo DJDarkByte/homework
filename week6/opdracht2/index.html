@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../foundation.css" />
+    </head>
+    <body>
+        <div class="row">
+            <div class="twelve columns">
+                <canvas id="canvas" height="500" width="900"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="button-bar">
+                
+                <button id="clearcanvas" class="button">Clear</button>
+
+                <ul class="button-group">
+                    <li>
+                        <button data-drawmode="circles" class="button">Circles</button>
+                    </li>
+                    <li>
+                        <button data-drawmode="squares" class="button">Squares</button>
+                    </li>
+                    <li>
+                        <button data-drawmode="default" class="button">Line</button>
+                    </li>
+                </ul>
+
+                <ul class="button-group">
+                    <li>
+                        <button data-linesize="1" class="button">thin</button>
+                    </li>
+                    <li>
+                        <button data-linesize="5" class="button">medium</button>
+                    </li>
+                    <li>
+                        <button data-linesize="10" class="button">thick</button>
+                    </li>
+                </ul>
+
+                <ul class="button-group">
+                    <li>
+                        <button data-linecolor="#0f0" class="button">green</button>
+                    </li>
+                    <li>
+                        <button data-linecolor="#f00" class="button">red</button>
+                    </li>
+                    <li>
+                        <button data-linecolor="#000" class="button">black</button>
+                    </li>
+                    <li>
+                        <button data-linecolor="#00f" class="button">blue</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <script src="../jquery.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
