@@ -3,8 +3,7 @@ body {
     margin: 20px auto;
 }
 .active {
-    color: orange;
-    font-weight: 700;
+    color: orange !important;
 }
 #intervalsList {
     padding: 0;

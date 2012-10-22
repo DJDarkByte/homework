@@ -5,17 +5,6 @@ var $ = {
 
         return document.querySelector(id);
     },
-    getAttr: function getAllElementsWithAttribute(attribute) {
-        var matchingElements = [];
-        var allElements = this.get('*');
-        for (var i = 0; i < allElements.length; i++) {
-            if (allElements[i].getAttribute(attribute)) {
-                // Element exists with attribute. Add to array.
-                matchingElements.push(allElements[i]);
-            }
-        }
-        return matchingElements;
-    },
     create: function (tagName) {
         'use strict';
 
@@ -68,7 +57,9 @@ Workout.prototype.hasCool = function () {
 Workout.prototype.removeInterval = function(intervalId) {
     'use strict';
     
-    _.reject(interval.id === intervalId);
+    _.reject(this.intervals, function () {
+        return interval.id === intervalId;
+    });
 };
 
 var Interval = function () {
@@ -90,13 +81,25 @@ var APP = {
     currentWorkout: null
 };
 
+APP.init = function () {
+    'use strict';
+    
+    APP.workouts = JSON.parse(localStorage.getItem('APP'));
+    APP.currentWorkout = APP.workouts[0] || null;
+    APP.Draw.workoutsList();
+};
+
 APP.save = function () {
     'use strict';
 
     if (window.localStorage) {
         localStorage.setItem('APP', JSON.stringify(APP.workouts));
-        console.log(JSON.parse(localStorage.getItem('APP')));
     }
+};
+
+APP.clear = function () {
+    localStorage.setItem('APP', JSON.stringify([]));
+    APP.init();
 };
 
 APP.addWorkout = function () {
@@ -140,8 +143,10 @@ APP.addInterval = function () {
     }
 };
 
-APP.removeInterval = function () {
-    
+APP.removeInterval = function (id) {
+    APP.currentWorkout.removeInterval(id);
+    APP.Draw.intervalsList();
+    APP.Draw.intervalsShortList();
 };
 
 APP.Draw = {
@@ -152,14 +157,18 @@ APP.Draw = {
         $.empty('#workoutsList');
 
         var li;
-        _.each(APP.workouts, function (workout) {
-            li = $.create('li');
-            if (workout === APP.currentWorkout) {
-                li.setAttribute('class', 'active');
-            }
-            li.innerHTML = workout.name;
-            $.get('#workoutsList').appendChild(li);
-        });
+        if (APP.currentWorkout !== null) {
+            _.each(APP.workouts, function (workout) {
+                li = $.create('li');
+                li.innerHTML = workout.name;
+                if (workout === APP.currentWorkout) {
+                    li.setAttribute('class', 'active');
+                }
+                $.get('#workoutsList').appendChild(li);
+            });
+            APP.Draw.intervalsList();
+            APP.Draw.intervalsShortList();
+        }
     },
     
     intervalsList: function () {
@@ -169,6 +178,7 @@ APP.Draw = {
         var li,
             dist,
             extra;
+            
         _.each(APP.currentWorkout.intervals, function (interval) {
             li = $.create('li');
             extra = '';
@@ -179,7 +189,6 @@ APP.Draw = {
             if (interval.isCool) {
                 extra = '(Cooldown)';
             }
-            li.setAttribute('data-remove-id', Math.floor(Math.random()*1000000));
             li.innerHTML = interval.size + ' ' + dist + ' ' + interval.speed + ' ' + extra;
             switch (interval.speed) {
                 case 'fast':
@@ -213,9 +222,8 @@ APP.Draw = {
 };
 
 // Event handlers and listeners
+document.onload = APP.init();
 $.get('#newWorkoutBtn').onclick = APP.addWorkout;
 $.get('#saveWorkoutBtn').onclick = APP.save;
 $.get('#addIntervalBtn').onclick = APP.addInterval;
-$.getAttr('data-remove-id').onclick = function () {
-    APP.removeInterval(this.data('remove-id'));
-};
+$.get('#clearStorageBtn').onclick = APP.clear;
