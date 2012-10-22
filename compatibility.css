@@ -1,0 +1,41 @@
+/**
+ * Author: Bart Veneman
+ * Date: 22 oct 2012
+ */
+
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+table {
+    width: 80%;
+    float: left;
+    margin-right: 5%;
+}
+aside {
+    float: left;
+    width: 15%;
+}
+.legend {
+    padding: 0;
+    list-style: none;
+}
+.legend span {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    margin-right: .5em;
+}
+
+.full {
+    background-color: green;
+}
+.partial {
+    background-color: orange;
+}
+.none {
+    background-color: red;
+}
+.na {
+    background-color: silver;
+}

@@ -1,0 +1,21 @@
+body {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+.active {
+    color: orange;
+    font-weight: 700;
+}
+#intervalsList {
+    padding: 0;
+    list-style: none;
+}
+.fast {
+    background-color: red;
+}
+.medium {
+    background-color: gold;
+}
+.slow {
+    background-color: lawngreen;
+}

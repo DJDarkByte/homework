@@ -1,10 +1,87 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Workouts</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="../foundation.css">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         
+        <aside class="four columns">
+            <h2>Workouts</h2>
+            <nav>
+                <ul id="workoutsList"></ul>
+            </nav>
+            <div class="button-group">
+                <button id="newWorkoutBtn" class="button">New</button>
+                <button id="saveWorkoutBtn" class="button">Save</button>
+            </div>
+        </aside>
+        
+        <section class="eight columns">
+            <div class="row">
+                <h3>Interval</h3>
+                <div class="three columns">
+                    <input type="radio" name="workoutType" value="time" id="time" checked>
+                    <label for="time">Time</label>
+                </div>
+                
+                <div class="three columns">
+                    <input type="radio" name="workoutType" value="distance" id="distance">
+                    <label for="distance">Distance</label>
+                </div>
+                
+                <div class="three columns">
+                    <input type="checkbox" name="warmOrCool" value="warm" id="warm">
+                    <label for="warm">Warm-up</label>
+                </div>
+                
+                <div class="three columns">
+                    <input type="checkbox" name="warmOrCool" value="cool" id="cool">
+                    <label for="cool">Cool-down</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <label for="intervalSize">Size:</label>
+                    <input type="text" name="intervalSize" id="intervalSize"> min.
+                </div>
+                <div class="row">
+                    <label for="intervalSpeed">Speed:</label>
+                    <select id="intervalSpeed">
+                        <option value="slow">Slow</option>
+                        <option value="medium">Medium</option>
+                        <option value="fast">Fast</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="eight columns">
+                        <label for="intervalSlope">Slope:</label>
+                        <input type="range" name="intervalSlope" id="intervalSlope" min="0" max="10" step="1">
+                    </div>
+                    <div class="four columns">
+                        <button id="addIntervalBtn" class="button">add interval</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="six columns">
+                    <ul id="intervalsList"></ul>
+                </div>
+                <div class="six columns">
+                    <fieldset>
+                        <legend>Info</legend>
+                        <span id="numIntervals">0</span> intervals:
+                        <ul id="intervalsShortList"></ul>
+                    </fieldset>
+                </div>
+            </div>
+        </section>
+        
+        <script src="../underscore.js"></script>
+        <script src="app.js"></script>
+        <script src="handlers.js"></script>
     </body>
 </html>
