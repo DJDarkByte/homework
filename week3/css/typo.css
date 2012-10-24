@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+body {
+    font-family: "Ubuntu Condensed", sans-serif;
+    color: #c0c0c0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 .75em 0;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: rgba(255, 155, 0, 1);
+}
+.modal h3 {
+    color: #444;
+}
+.modal p {
+    color: #fff;
+}

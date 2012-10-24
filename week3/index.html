@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blokkenschema</title>
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- Stylesheets will be concatenated and minified in live project -->
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu:700' rel='stylesheet'>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/typo.css">
+    </head>
+    <body>
+        
+        <div class="wrapper">
+            <h1>Speelschema</h1>
+            
+            <div id="days-list"></div>
+            
+            <div class="scheme">
+                <div class="stages">
+                    <h2>Podium</h2>
+                    <ul></ul>
+                </div>
+                <div class="time-table">
+                    <div class="time-row">
+                        <ol class="times">
+                            <li>11.00</li>
+                            <li>12.00</li>
+                            <li>13.00</li>
+                            <li>14.00</li>
+                            <li>15.00</li>
+                            <li>16.00</li>
+                            <li>17.00</li>
+                            <li>18.00</li>
+                            <li>19.00</li>
+                            <li>20.00</li>
+                            <li>21.00</li>
+                            <li>22.00</li>
+                            <li>23.00</li>
+                        </ol>
+                        <div id="stagelists"></div>
+                    </div>
+                </div>
+                
+                <div class="btn-group">
+                    <button data-reveal-id="addDay">+ Dag toevoegen</button>
+                    <button data-reveal-id="addStage">+ Podium toevoegen</button>
+                    <button data-reveal-id="addAct">+ Optreden toevoegen</button>
+                </div>
+                
+                <div id="addAct" class="form">
+                    <input type="text" id="newAct" placeholder="artist" />
+                    <input type="text" id="newActStart" placeholder="begin HH:mm" />
+                    <input type="text" id="newActEnd" placeholder="end HH:mm" />
+                    <select id="newActStage"></select>
+                    <input type="text" id="newActImgUrl" placeholder="image filename" />
+                    <button class="btn" id="addActBtn">Toevoegen</button>
+                </div>
+                
+                <div id="addStage" class="form">
+                    <input type="text" id="newStageName" placeholder="naam" />
+                    <button id="addStageBtn">Toevoegen</button>
+                </div>
+                
+                <div id="addDay" class="form">
+                    <input type="text" id="newDay" placeholder="dag" />
+                    <button id="addDayBtn">Toevoegen</button>
+                </div>
+                
+            </div><!-- /.scheme -->
+        </div><!-- /.wrapper -->
+        
+        <!-- Scripts -->
+        <script src="../jquery.js"></script>
+        <script src="../underscore.js"></script>
+        <script src="js/festival.js"></script>
+        <script src="js/act.js"></script>
+        <script src="js/day.js"></script>
+        <script src="js/stage.js"></script>
+        <script src="js/jquery.modal.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
