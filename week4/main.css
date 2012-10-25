@@ -1,0 +1,134 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html {
+    overflow-y: scroll;
+}
+body {
+    width: 34em;
+    margin: 20px auto;
+    font-size: 100%;
+    line-height: 1.4;
+    font-family: 'Droid Serif', serif;
+    color: #333;
+    background-color: #f5f5f5;
+}
+h1, h2, h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1;
+}
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin: 0 0 .5em;
+}
+h2 {
+    font-size: 2.4em;
+    margin: 0 0 1em;
+}
+h3 {
+    font-size: 1.8em;
+    margin: 0 0 .5em;
+}
+p {
+    font-size: 1.125em;
+    margin: 0 0 2em;
+    position: relative;
+}
+img {
+    max-width: 12em;
+    height: auto;
+    position: absolute;
+    right: -14em;
+}
+.recommendations {
+    background: #d5d5d5;
+    border: 1px solid #c5c5c5;
+    padding: 1em 2em;
+    border-radius: 2px;
+}
+ul {
+    font-size: 1.125em;
+    list-style-type: square;
+}
+li {
+    margin: 0 0 1em;
+}
+a {
+    color: #1e728c;
+}
+a:hover {
+    color: #196177;
+}
+.pagelink {
+    display: inline-block;
+    margin-top: -4em;
+    margin-bottom: 2em;
+    float: right;
+}
+.main-nav {
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+.main-nav ul {
+    padding: 0;
+    text-align: center;
+}
+.main-nav li {
+    display: inline-block;
+    margin: 0 1em;
+}
+.main-nav a {
+    padding: .5em .75em;
+    background-color: #e5e5e5;
+    border: 1px solid #d5d5d5;
+    font-weight: 700;
+    color: #444;
+    text-decoration: none;
+    border-radius: 2px;
+    display: block;
+}
+.main-nav a:hover {
+    background-color: #d5d5d5;
+    border-color: #c5c5c5;
+}
+.main-nav a:focus {
+    outline: none;
+}
+.active {
+    background-color: #1e728c;
+    color: #fff;
+}
+.active:hover {
+    background-color: #196177;
+    color: #f5f5f5;
+}
+.site {
+    position: relative;
+}
+.sub-nav {
+    position: absolute;
+    width: 12em;
+    left: -14em;
+    top: 4.8em;
+}
+.sub-nav ul {
+    text-align: right;
+    font-size: 1em;
+    padding: 0 1em 0;
+    margin: 0;
+}
+.sub-nav li {
+    margin: 0 0 .25em;
+}
+.top {
+    font-size: .875em;
+    line-height: 1;
+    float: right;
+    margin-top: -2.5em;
+    color: #aaa;
+}

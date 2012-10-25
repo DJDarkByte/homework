@@ -1,7 +1,7 @@
 var APP = {
     festival: null,
     currentDay: null,
-    pxPerMin: 0
+    PX_PER_MIN: 0
 };
 
 APP.init = function () {
@@ -9,7 +9,7 @@ APP.init = function () {
 
     APP.festival = new Festival('Bevrijdingsfestival Overijssel 2012');
     APP.seed();
-    APP.pxPerMin = $('.time-table').width() / (13 * 60);
+    APP.PX_PER_MIN = $('.time-table').width() / (13 * 60);
     APP.currentDay = APP.festival.days[0] || null;
 
     APP.Draw.updateHeader();
@@ -98,7 +98,7 @@ APP.Draw = {
     timelist: function () {
         'use strict';
 
-        $('.times li').css('width', 60 * APP.pxPerMin + 'px');
+        $('.times li').css('width', 60 * APP.PX_PER_MIN + 'px');
     },
 
     showform: function (obj) {
@@ -189,8 +189,8 @@ APP.Draw = {
                             "imgUrl" : act.img()
                         })
                         .css({
-                            'width': act.duration() * APP.pxPerMin + 'px',
-                            "margin-left" : act.prePause() * APP.pxPerMin + "px"
+                            'width': act.duration() * APP.PX_PER_MIN + 'px',
+                            "margin-left" : act.prePause() * APP.PX_PER_MIN + "px"
                         })
                         .appendTo("#" + stage.name + "-list");
 
