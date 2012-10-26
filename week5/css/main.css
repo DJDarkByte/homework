@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Main layout settings
+   ========================================================================== */
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+body {
+    background: #444 url(http://subtlepatterns.com/patterns/txture.png) repeat;
+}
+.wrapper {
+    width: 94%;
+    margin: 10px auto;
+}
+.scheme {
+    overflow: hidden;
+    clear: both;
+}
+
+/* Stages
+   ========================================================================== */
+.stages {
+    float: left;
+    background: rgba(255, 255, 255, .2);
+    padding: 10px;
+    width: 13%;
+    border: 1px solid #fff;
+    margin-bottom: 2em;
+}
+.stages ul {
+    padding: 0;
+    list-style: none inside;
+    text-align: center;
+}
+.stages li {
+    height: auto; /* will be set dynamically with jQuery to the height of the tallest stagelist li  */
+    border: 1px solid #fff;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    background: rgba(255, 155, 0, .2);
+    padding: 3px 4px;
+    min-height: 28px;
+}
+
+/* Times
+   ========================================================================== */
+.time-table {
+    width: 85%;
+    margin: 0 0 2em 15%;
+}
+.time-row {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    padding: 0 0 50px 0;
+}
+.times {
+    padding: 0;
+    width: 100%;
+    list-style: none inside;
+    white-space: nowrap;
+    font-size: 0;
+    margin: 15px 0 18px 0;
+}
+.times li {
+    border-right: 1px solid #c0c0c0;
+    padding: 3px 5px;
+    width: 3em;
+    display: inline-block;
+    font-size: 14px;
+}
+.times li:first-child {
+    padding: 3px 5px 3px 0;
+}
+.times li:last-child {
+    padding: 3px 0 3px 5px;
+    border-right: none;
+}
+.stagelist {
+    padding: 0;
+    display: block;
+    list-style: none inside;
+    white-space: nowrap;
+    font-size: 0;
+    border-bottom: 1px solid #c0c0c0;
+    border-top: 1px solid #c0c0c0;
+    position: relative;
+    margin: 0 0 10px 0;
+    min-height: 28px;
+}
+.stagelist li {
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #c0c0c0;
+    border-width: 0 1px;
+    background-color: rgba(255, 255, 255, .1);
+    width: 150px; /* will be set dynamically with jQuery */
+    margin-left: 20px; /* will be set dynamically with jQuery */
+    white-space: normal;
+    font-size: 14px;
+    padding: 3px 4px;
+    position: relative;
+    word-break: break-all;
+    min-height: 28px;
+}
+.stagelist li:first-child {
+    margin-left: 0;
+}
+.stagelist li:hover {
+    cursor: pointer;
+}
+
+
+/* Modal
+   ========================================================================== */
+.modal-bg {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    display: none;
+}
+.modal {
+    background: rgba(255, 155, 0, 1);
+    border: 2px solid #fff;
+    border-radius: 3px;
+    top: 100px;
+    z-index: 41;
+    padding: 30px;
+    position: absolute;
+    margin-left: -100px; /* half of element width */
+    left: 50%;
+    width: 200px; /* image width + padding */
+    box-shadow: 0 0 12px #000;
+}
+.close-modal {
+    top: 8px;
+    right: 11px;
+    font-size: 22px;
+    position: absolute;
+    text-decoration: none;
+    line-height: .5;
+    color: #fff;
+}
+.close-modal:hover {
+    cursor: pointer;
+}
+
+
+/* Buttons
+   ========================================================================== */
+.btn-group {
+    clear: both;
+}
+.btn,
+button {
+    padding: .375em .75em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    border: 1px solid #fff;
+    background-color: rgba(255, 155, 0, 1);
+    line-height: 1;
+    border-radius: 2px;
+}
+.btn:hover,
+button:hover {
+    background-color: rgba(255, 155, 0, .8);
+}
+
+/* Misc
+   ========================================================================== */
+.ui-list {
+    list-style: none;
+    padding: 0;
+}
+input,
+select {
+    padding: .25em .5em;
+    background-color: #e0e0e0;
+    border: 1px solid #000;
+}
+input:focus,
+select:focus {
+    background-color: #fff;
+}
+.form {
+    display: none;
+    padding: .5em 0;
+}

@@ -7,7 +7,7 @@
         
         <!-- Stylesheets will be concatenated and minified in live project -->
         <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu:700' rel='stylesheet'>
-        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/typo.css">
     </head>
