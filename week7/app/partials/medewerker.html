@@ -1,0 +1,11 @@
+<input ng-model="order" />
+<button ng-click="addOrder()">Order</button>
+
+<ul class="tables">
+    <li ng-repeat="table in tables" class="av-{{table.available}} selected-{{table.isCurrent}}" ng-click="setCurrent(table)">
+        <h4>table {{table.name}}</h4>
+        <ul>
+            <li ng-repeat="order in table.orders">{{order}}</li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,10 @@
+<p>There are {{getNumAvailable()}} from {{getNumTables()}} tables available for tonight!</p>
+
+<select ng-model="selected">
+    <option>-- Select a table --</option>
+    <option ng-repeat="table in getAvailableTables()" value="{{table.name}}">Table {{table.name}} with {{table.numSeats}} seats</option>
+</select>
+
+<button ng-click="bookTable()">Book now!</button>
+
+<p class="message">{{message}}</p>

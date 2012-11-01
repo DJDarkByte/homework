@@ -1,0 +1,132 @@
+/* app css stylesheet */
+@import '../../../../normalize.css';
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+p {
+    margin: 0 0 2em 0;
+}
+pre {
+    font-size: .75em;
+}
+body {
+    width: 600px;
+    margin: 0 auto;
+    font: normal normal 400 1em/1.5 Sanchez, sans-serif;
+    background-color: #fcfefc;
+    color: #444;
+}
+a {
+    color: #444;
+}
+header img {
+    margin: 0 0 -50px 0;
+}
+header, footer {
+    text-align: center;
+}
+h1, h2, h3, h4 {
+    text-align: center;
+    font-weight: 400;
+}
+.main {
+    border-width: 1px 0;
+    border-color: #ddd;
+    border-style: solid;
+    padding: 10px;
+}
+select {
+    padding: .5em;
+    background-color: #fcfefc;
+    border: 1px solid #ddd;
+    margin: 1em 1em 1em 0;
+}
+button {
+    padding: .5em 1em;
+    line-height: 1;
+    font-size: 1em;
+    font-family: Sanchez, sans-serif;
+    color: #444;
+    background-color: #ddd;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+}
+button:hover {
+    background-color: #bbb;
+    border-color: #999;
+    cursor: pointer;
+}
+input {
+    line-height: 1;
+    padding: .25em .5em;
+    font-size: 1em;
+    font-family: Sanchez, sans-serif;
+    color: #444;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+}
+ul {
+    padding: 0;
+    list-style-position: inside;
+}
+.tables {
+    list-style: none;
+}
+.tables > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    margin-right: 4%;
+    color: #fcfefc;
+    padding: .25em .75em;
+}
+.tables > li:hover {
+    cursor: pointer;
+}
+.tables > li:nth-child(4) {
+    margin-right: 0;
+}
+.av-true {
+    background-color: #3C783C;
+}
+.message {
+    color: #3C783C;
+}
+.av-false {
+    background-color: #964B4B;
+}
+.selected-true {
+    border: .25em solid #444;
+}
+
+
+
+.menu {
+  list-style: none;
+  margin-bottom: 2em;
+  padding: 0;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
