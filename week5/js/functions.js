@@ -1,4 +1,4 @@
-function Act(artist, start, end, imgUrl, text) {
+function Act(artist, start, end, imgUrl) {
     "use strict";
     this.artist = artist;
     this.start = start;

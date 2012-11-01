@@ -8,7 +8,6 @@ APP.init = function () {
     'use strict';
 
     APP.festival = new Festival('Bevrijdingsfestival Overijssel 2012');
-    APP.seed();
     APP.PX_PER_MIN = $('.time-table').width() / (13 * 60);
     APP.currentDay = APP.festival.days[0] || null;
 
@@ -28,6 +27,13 @@ APP.addDay = function (name) {
     }
 
     var day = new Day('name');
+    day.persist();
+    if (day.dayID === null) {
+        throw {
+            name: 'HellBrokeLooseException',
+            message: 'You bought it'
+        };
+    }
     APP.festival.days.push(day);
     APP.changeCurrentDay(day);
 
@@ -264,49 +270,3 @@ $(document).ready(function () {
     'use strict';
     APP.init();
 });
-
-APP.seed = function () {
-    'use strict';
-
-    var day1, day2, stage1, stage2, stage3, stage4, act1, act2, act3, act4, act5, act6, act7, act8;
-
-    day1 = new Day('friday');
-    day2 = new Day('saturday');
-
-    stage1 = new Stage('podiumFriday1');
-    stage2 = new Stage('podiumFriday2');
-    stage3 = new Stage('podiumSaturday1');
-    stage4 = new Stage('podiumSaturday2');
-
-    stage1.acts = [
-        new Act("Das Pri-V", "12:45", "13:30"),
-        new Act("Textures", "14:00", "14:50", 'Textures-kl.jpg'),
-        new Act("The Asteroids Galaxy Tour", "15:20", "16:10", 'The-Asteroids-Galaxy-Tour-kl.jpg'),
-        new Act("Eric Sardinas", "16:40", "17:30", 'Eric-Sardinas-kl.jpg'),
-        new Act("Sonic Boom Six", "18:00", "18:50", 'Sonic-Boom-six-kl.jpg')
-    ];
-    stage2.acts = [
-        new Act("Black Rose Rebelz", "19:10", "19:30", 'Kader-klein-Black-Rose.jpg'),
-        new Act("Negritos", "20:10", "21:00", 'Negritos-kl.jpg'),
-        new Act("Blaudzun", "21:30", "22:30", 'Blaudzun-kl.jpg'),
-        new Act("Nobody beats the drum", "23:00;", "23:59", 'Nobody-Beats-The-Drum-kl.jpg')
-    ];
-    stage3.acts = [
-        new Act("Openingsconcert met De Vuurvogel", "11:00", "12:00", "Kader-klein-Vuurvogel.jpg"),
-        new Act("Alain Clark", "12:30", "13:00", 'Alain-Clark-kl.jpg'),
-        new Act("Heideroosjes", "14:00", "14:45", 'heideroosjes-kl.jpg'),
-        new Act("Krystl", "15:20", "16:10", 'Krystl-kl.jpg'),
-        new Act("Normaal", "16:40", "17:40", 'kader-klein-Normaal.jpg')
-    ];
-    stage4.acts = [
-        new Act("Rapalje", "18:10", "19:00", 'Rapalje-kl.jpg'),
-        new Act("Waylon", "19:30", "20:30", 'Waylon-Kl.jpg'),
-        new Act("Chef' Special", "21:00", "21:50", 'Chefspecial-klein.jpg'),
-        new Act("VanVelzen", "22:30", "23:30", 'VanVelzen-kl.jpg')
-    ];
-
-    day1.stages = [stage1, stage2];
-    day2.stages = [stage3, stage4];
-
-    APP.festival.days = [day1, day2];
-};
